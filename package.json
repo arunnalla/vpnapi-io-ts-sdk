@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/arunnalla/vpnapi-io-ts-sdk/issues"
   },
-  "homepage": "https://github.com/arunnalla/vpnapi-io-ts-sdk#readme"
+  "homepage": "https://github.com/arunnalla/vpnapi-io-ts-sdk#readme",
+  "volta": {
+    "node": "18.13.0"
+  }
 }
