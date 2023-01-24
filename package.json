@@ -1,0 +1,27 @@
+{
+  "name": "vpnapi-io-ts-sdk",
+  "version": "1.0.0",
+  "description": "TS SDK for https://vpnapi.io",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/arunnalla/vpnapi-io-ts-sdk.git"
+  },
+  "keywords": [
+    "vpnapi.io",
+    "sdk",
+    "typescript"
+  ],
+  "author": "Arun Nalla <hello@arunnalla.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arunnalla/vpnapi-io-ts-sdk/issues"
+  },
+  "homepage": "https://github.com/arunnalla/vpnapi-io-ts-sdk#readme"
+}
