@@ -1,5 +1,5 @@
 {
-  "name": "vpnapi-io-ts-sdk",
+  "name": "@arunnalla/vpnapi-io-ts-sdk",
   "version": "1.0.0",
   "description": "TS SDK for https://vpnapi.io",
   "main": "index.js",
