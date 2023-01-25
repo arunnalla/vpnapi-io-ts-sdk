@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { IpInformation } from './models';
+import { IpInformation, TooManyRequestsException } from './models';
 import { IpResponse } from './types';
 
 class VpnApiIo {
@@ -12,11 +12,16 @@ class VpnApiIo {
   }
 
   async queryIp(ipAddress: string): Promise<IpInformation> {
-    const ipResponse: AxiosResponse<IpResponse> = await axios.get(
-      `${VpnApiIo.BASE_URL}/${ipAddress}?key=${this.apiKey}`
-    );
-
-    return IpInformation.from(ipResponse.data);
+    try {
+      const ipResponse: AxiosResponse<IpResponse> = await axios.get(
+        `${VpnApiIo.BASE_URL}/${ipAddress}?key=${this.apiKey}`
+      );
+      return IpInformation.from(ipResponse.data);
+    } catch (error) {
+      if (error.response.status === 429) {
+        throw new TooManyRequestsException(error.message);
+      }
+    }
   }
 }
 
