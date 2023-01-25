@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "strictPropertyInitialization": false
+  },
+  "exclude": ["node_modules"]
+}

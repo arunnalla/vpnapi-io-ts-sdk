@@ -26,5 +26,13 @@
   "homepage": "https://github.com/arunnalla/vpnapi-io-ts-sdk#readme",
   "volta": {
     "node": "18.13.0"
+  },
+  "dependencies": {
+    "axios": "^1.2.4",
+    "builder-pattern": "^2.2.0",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
   }
 }
