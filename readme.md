@@ -21,7 +21,3 @@ npm test
 ```sh
 npm install @arunnalla/vpnapi-io-ts-sdk@1.0.0
 ```
-
-### ToDO:
-
-- [ ] SDK should throw appropriate rate limit exception when ratelimit is reached
