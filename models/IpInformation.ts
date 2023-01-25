@@ -15,11 +15,6 @@ export class IpInformation {
     const location = LocationInformation.from(response.location);
     const network = NetworkInformation.from(response.network);
 
-    return Builder(IpInformation)
-      .ip(response.ip)
-      .location(location)
-      .network(network)
-      .security(security)
-      .build();
+    return Builder(IpInformation).ip(response.ip).location(location).network(network).security(security).build();
   }
 }
