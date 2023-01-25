@@ -1,6 +1,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import VpnApiIo from '.';
+import { InvalidApiKeyException } from './exceptions/InvalidApiKeyException';
 import mockData from './mock-data.json';
 import { TooManyRequestsException } from './models';
 
@@ -44,5 +45,11 @@ describe('IP information', () => {
     const mock = new MockAdapter(axios);
     mock.onGet(`${GET_IP_INFO_API_URL}/8.8.8.8?key=expired_quota_key`).reply(429);
     await expect(new VpnApiIo('expired_quota_key').queryIp('8.8.8.8')).rejects.toThrow(TooManyRequestsException);
+  });
+
+  it('check exception when key provided is invalid', async () => {
+    const mock = new MockAdapter(axios);
+    mock.onGet(`${GET_IP_INFO_API_URL}/8.8.8.8?key=invalid_key`).reply(403);
+    await expect(new VpnApiIo('invalid_key').queryIp('8.8.8.8')).rejects.toThrow(InvalidApiKeyException);
   });
 });

@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+import { InvalidApiKeyException } from './exceptions/InvalidApiKeyException';
 import { IpInformation, TooManyRequestsException } from './models';
 import { IpResponse } from './types';
 
@@ -21,6 +22,10 @@ class VpnApiIo {
       if (error.response.status === 429) {
         throw new TooManyRequestsException(error.message);
       }
+      if (error.response.status === 403) {
+        throw new InvalidApiKeyException(error.message);
+      }
+      throw error;
     }
   }
 }
