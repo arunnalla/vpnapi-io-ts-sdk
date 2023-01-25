@@ -7,10 +7,6 @@ export class SecurityInformation {
   tor: boolean;
   proxy: boolean;
 
-  isUserIp() {
-    return !(this.vpn || this.relay || this.tor || this.proxy);
-  }
-
   static from(security: Security) {
     return Builder(SecurityInformation)
       .proxy(security.proxy)

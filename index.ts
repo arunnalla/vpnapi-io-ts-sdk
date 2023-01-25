@@ -3,7 +3,7 @@ import { IpInformation } from './models';
 import { IpResponse } from './types';
 
 class VpnApiIo {
-  private static readonly BASE_URL: string = 'https://vpnapi.io/api/';
+  private static readonly BASE_URL: string = 'https://vpnapi.io/api';
 
   private apiKey: string;
 
